@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Navbar and Forms</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="app.css" />
+  </head>
+
+  <!-- Navbar: line #21 -->
+  <!-- Forms: line #78 -->
+  <!-- Utilities (padding): line #233 -->
+
+  <body>
+    <!-- ********** NAVBAR ********** -->
+
+    <h1 class="display-4 text-info text-center">Navbar</h1>
+    <div class="container">
+      <p>
+        Following is a sticky navbar in Bootstrap. It will stick to the top of
+        the page as you scroll down. The navbar items will be collapsed to a
+        toggler for small screens, and expanded for larger screens.
+      </p>
+    </div>
+
+    <!-- .navbar-expand-sm: the collapsed content will be expended at the small breakpoint -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-primary sticky-top">
+      <!-- .navbar-brand is used to add a link, a heading, or an icon. It positions the element on the left of the navbar. -->
+      <a class="navbar-brand" href="#">Navbar-brand</a>
+      <!-- .navbar-toggler creates the toggler icon. To connect to the content, match .data-target in the button with .id of the content -->
+      <button
+        class="navbar-toggler"
+        data-toggle="collapse"
+        data-target="#expandme"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- the .collapse class hides content-->
+      <div class="collapse navbar-collapse" id="expandme">
+        <div class="navbar-nav">
+          <a href="Home" class="nav-item nav-link">nav-item</a>
+          <a href="Home" class="nav-item nav-link">nav-item</a>
+          <a href="Home" class="nav-item nav-link">nav-item</a>
+        </div>
+        <!-- .ml-auto: sets margin-left to auto on the form -->
+        <form class="form-inline ml-auto">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-search"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+              />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </nav>
+
+    <br />
+    <!-- ********** FORMS ********** -->
+    <div class="container">
+      <h1 class="display-4 text-info text-center">Forms</h1>
+      <p>
+        <code>form-control</code> is a Bootstrap class that makes an element
+        take up the entire width of its container.
+      </p>
+      <form action="#nowhere">
+        <!--------------- input box --------------->
+        <div class="form-group">
+          <label for="email1">Email</label>
+          <input type="email" id="email1" placeholder="no form-control class" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="with form-control class"
+          />
+        </div>
+
+        <hr />
+        <!--------------- drop down menu --------------->
+        <div class="form-group">
+          <label for="state1">State (no form-control)</label>
+          <select name="state" id="state1">
+            <option value="NY">New York</option>
+            <option value="NJ">New Jersey</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="state">State (with form-control)</label>
+          <select class="form-control" name="state" id="state">
+            <option value="NY">New York</option>
+            <option value="NJ">New Jersey</option>
+          </select>
+        </div>
+        <hr />
+        <!--------------- checkbox --------------->
+        <p>
+          Bootstrap comes with its own customized version of checkbox that is
+          completely different from the browser default.
+        </p>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="flexCheckDefault"
+          />
+          <label class="form-check-label" for="flexCheckDefault">
+            Default checkbox
+          </label>
+        </div>
+
+        <div class="custom-control custom-checkbox">
+          <input
+            type="checkbox"
+            class="custom-control-input"
+            id="customCheck1"
+          />
+          <label class="custom-control-label" for="customCheck1"
+            >Custom checkbox</label
+          >
+        </div>
+      </form>
+      <!--------------- use case --------------->
+      <hr />
+      <p>Creating a form layout:</p>
+      <form action="#nowhere">
+        <!-- form-row changes the default spacing/gutter size) so our forms are a little more compact -->
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Email"
+            />
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="password"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Street Address</label>
+          <input
+            type="text"
+            class="form-control"
+            id="address"
+            placeholder="V4.6 Bootstrap St"
+          />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="city">City</label>
+            <input type="text" class="form-control" id="city" />
+          </div>
+
+          <div class="form-group col-md-3 col-6">
+            <label for="state">State</label>
+            <select class="form-control" name="state" id="state">
+              <option value="NY">New York</option>
+              <option value="NJ">New Jersey</option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-3 col-6">
+            <label for="zip">Zip Code</label>
+            <input type="text" class="form-control" id="zip" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="tos" />
+            <label class="custom-control-label" for="tos">Sign Me Up</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-success">
+          Register
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-check-circle"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+            />
+            <path
+              d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"
+            />
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <!-- ********** UTILITIES ********** -->
+    <div class="container">
+      <hr />
+      <h1 class="display-4 text-info text-center">Utilities</h1>
+      <!--------------- borders --------------->
+      <div class="row">
+        <div class="col-md-4 border rounded border-success shadow">
+          This column has <code>rounded</code> <code>borders</code> with
+          <code>shadow</code>.
+        </div>
+      </div>
+
+      <hr />
+      <!--------------- padding sizes --------------->
+      <div>
+        <!-- .p-o refers to no padding for all sides -->
+        <button class="btn btn-primary p-0">Padding 0</button>
+        <button class="btn btn-primary p-1">Padding 1</button>
+        <button class="btn btn-primary p-2">Padding 2</button>
+        <button class="btn btn-primary p-3">Padding 3</button>
+        <button class="btn btn-primary p-4">Padding 4</button>
+        <button class="btn btn-primary p-5">Padding 5</button>
+      </div>
+
+      <hr />
+      <!--------------- padding sides --------------->
+      <div class="my-5">
+        <button class="btn btn-primary p-0 pt-5">
+          <code>pt-5</code>: Padding Top 5
+        </button>
+        <button class="btn btn-warning p-0 pl-5">
+          <code>pl-5</code>: Padding Left 5
+        </button>
+        <button class="btn btn-primary p-0 pb-5">
+          <code>pb-5</code>: Padding Bottom 5
+        </button>
+        <button class="btn btn-warning p-0 pr-5">
+          <code>pr-5</code>: Padding Right 5
+        </button>
+        <button class="btn btn-primary p-0 px-5">
+          <code>px-5</code>: Padding Left and Right 5
+        </button>
+        <button class="btn btn-warning p-0 py-5">
+          <code>py-5</code>: Padding Top and Bottom 5
+        </button>
+      </div>
+
+      <hr />
+      <!--------------- responsive paddings --------------->
+      <p>
+        The button below starts with no padding, and it's added padding of 1 at
+        the small breakpoint, padding of 2 at the medium breakipoint, padding of
+        3 at the large breakpoint, and padding of 5 at the extra-large
+        breakpoint.
+      </p>
+
+      <button class="btn btn-danger p-0 p-sm-1 p-md-2 p-lg-3 p-xl-5">
+        I CHANGE!
+      </button>
+    </div>
+
+    <!-- ********** JS SCRIPTS ********** -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
